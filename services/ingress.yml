@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hackaetis-ingress
+spec:
+  rules:
+  - host: hackaetis-plants-api.agaetis.net
+    http:
+      paths: 
+      - path: /hello-world
+        backend:
+          serviceName: hello-world-nodeport
+          servicePort: 80
