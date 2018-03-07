@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: potatoes-tensorflow-api-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: potatoes-tensorflow-api
+    spec:
+      containers:
+        - name: potatoes-tensorflow-api
+          image: agaetisit/hackaetis-plants-tensorflow-api:latest
+          ports:
+            - containerPort: 5002

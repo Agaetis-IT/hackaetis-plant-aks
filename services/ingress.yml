@@ -15,3 +15,7 @@ spec:
         backend:
           serviceName: potatoes-prediction-api-nodeport
           servicePort: 8000
+      - path: /potatoes-tensorflow-api
+        backend:
+          serviceName: potatoes-tensorflow-api-nodeport
+          servicePort: 8001

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: potatoes-tensorflow-api-nodeport
+spec:
+  type: NodePort
+  ports:
+  - port: 8001
+    targetPort: 5002
+  selector:
+    app: potatoes-tensorflow-api
