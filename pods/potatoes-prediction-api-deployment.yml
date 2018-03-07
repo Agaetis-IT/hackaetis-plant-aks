@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: potatoes-prediction-api
-          image: agaetis/potatoes-prediction-api:release
+          image: agaetis/potatoes_prediction_api:release
           ports:
             - containerPort: 8000
           args: ["foreground"]
