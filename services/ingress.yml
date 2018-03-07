@@ -11,3 +11,7 @@ spec:
         backend:
           serviceName: hello-world-nodeport
           servicePort: 80
+      - path: /potatoes-prediction-api
+        backend:
+          serviceName: potatoes-prediction-api-nodeport
+          servicePort: 8000

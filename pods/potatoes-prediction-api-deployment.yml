@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: potatoes-prediction-api-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: potatoes-prediction-api
+    spec:
+      containers:
+        - name: potatoes-prediction-api
+          image: agaetis/potatoes-prediction-api:release
+          ports:
+            - containerPort: 8000
+          args: ["foreground"]
+          env:
+            - name: HOST
+              value: http://hackaetis-plants-api.agaetis.net
+            - name: SECRET_KEY_BASE
+              value: MySecretKey
+            - name: AZURE_CUSTOM_VISION_PROJECT_ID
+              value: =49be4249-55b5-4192-af27-c14d9c16358d
+            - name: AZURE_CUSTOM_VISION_PREDICTION_KEY
+              value: =f701151ce64c4501b87d72642820d860
